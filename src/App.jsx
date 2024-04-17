@@ -5,14 +5,14 @@ import About from "./pages/About"
 import Products from "./pages/Products"
 import Contact from "./pages/Contact"
 
-import './App.css'
+import styles from './App.module.css'
 
 function App() {
 
   return (
     <>
     <BrowserRouter>
-      <nav>
+      <nav className={styles.navbar}>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/products">Products</Link>
@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage /> } />
         <Route path="/about" element={<About /> } />
-        <Route path="/products" element={<Products /> } />
+        <Route path="/products/*" element={<Products /> } />
         <Route path="/contact" element={<Contact /> } />
       </Routes>
     </BrowserRouter>
